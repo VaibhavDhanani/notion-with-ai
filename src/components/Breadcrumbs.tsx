@@ -36,10 +36,10 @@ const Breadcrumbs = () => {
               <React.Fragment key={index}>
                 <BreadcrumbItem>
                   {isLast ? (
-                    <BreadcrumbPage>{item.label}</BreadcrumbPage>
+                    <BreadcrumbPage><p className="text-base">{item.label}</p></BreadcrumbPage>
                   ) : (
                     <BreadcrumbLink href={item.path}>
-                      {item.label}
+                      <p className="text-base">{item.label}</p>
                     </BreadcrumbLink>
                   )}
                 </BreadcrumbItem>

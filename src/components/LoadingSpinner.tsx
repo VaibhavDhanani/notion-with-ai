@@ -1,11 +1,33 @@
 import React from "react";
 
 const LoadingSpinner = () => {
+  // Define color options with their corresponding Tailwind classes
+  const colorOptions = [
+    "fill-blue-600",
+    "fill-gray-600",
+    "fill-green-600",
+    "fill-yellow-600",
+    "fill-red-600",
+    "fill-indigo-600",
+    "fill-pink-600",
+    "fill-purple-600",
+    "fill-orange-600",
+    "fill-teal-600",
+    "fill-cyan-600",
+    "fill-amber-600",
+    "fill-emerald-600",
+    "fill-rose-600",
+    "fill-sky-600"
+  ];
+  
+  // Select a random color class
+  const randomColorClass = colorOptions[Math.floor(Math.random() * colorOptions.length)];
+
   return (
     <div role="status" className="flex items-center justify-center mt-10">
       <svg
         aria-hidden="true"
-        className="inline w-16 h-16 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600"
+        className={`inline w-16 h-16 text-gray-200 animate-spin dark:text-gray-600 ${randomColorClass}`}
         viewBox="0 0 100 101"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"

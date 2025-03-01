@@ -13,19 +13,14 @@ import { MenuIcon } from "lucide-react";
 import { useUser } from "@clerk/nextjs";
 import {
   collectionGroup,
-  DocumentData,
   query,
   where,
 } from "firebase/firestore";
 import { db } from "@/lib/firebase";
 import SidebarOption from "./SidebarOption";
+import { RoomDocument } from "@/interface/interface";
 
-interface RoomDocument extends DocumentData {
-  roomId: string;
-  userId: string;
-  role: "owner" | "editor" | "viewer";
-  createdAt: string;
-}
+
 
 const Sidebar = () => {
   const { user } = useUser();
