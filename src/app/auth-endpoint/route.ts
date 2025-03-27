@@ -22,11 +22,13 @@ export async function POST(req: NextRequest) {
     },
   });
 
+  
   const usersInRoom = await adminDB
-    .collectionGroup("rooms")
-    .where("userId", "==", sessionClaims?.email)
-    .get();
-
+  .collectionGroup("rooms")
+  .where("userId", "==", sessionClaims?.email)
+  .get();
+  
+  // console.log(usersInRoom)
   const userInRoom = usersInRoom.docs.find((doc) => doc.id === room);
 
   if (userInRoom?.exists) {
