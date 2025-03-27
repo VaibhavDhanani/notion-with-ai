@@ -1,7 +1,7 @@
-import { initializeApp, getApp, getApps, cert } from "firebase-admin/app";
+import { initializeApp, getApp, getApps, cert, ServiceAccount } from "firebase-admin/app";
 import { getFirestore } from "firebase-admin/firestore";
 
-const serviceAccount = {
+const serviceAccount : ServiceAccount = {
   type: process.env.FIREBASE_TYPE,
   project_id: process.env.FIREBASE_PROJECT_ID,
   private_key_id: process.env.FIREBASE_PRIVATE_KEY_ID,
