@@ -1,7 +1,15 @@
 "use client";
-import { SignedIn, SignedOut, SignInButton, SignUpButton, UserButton, useUser } from "@clerk/nextjs";
+import {
+  SignedIn,
+  SignedOut,
+  SignInButton,
+  SignUpButton,
+  UserButton,
+  useUser,
+} from "@clerk/nextjs";
 import React from "react";
 import Breadcrumbs from "./Breadcrumbs";
+import { Button } from "./ui/button";
 
 const Header = () => {
   const { user } = useUser();
@@ -16,14 +24,17 @@ const Header = () => {
       {/* Breadcums  */}
       <Breadcrumbs />
       <div>
-
-      <SignedOut>
-        <SignInButton />
-        <SignUpButton />
-      </SignedOut>
-      <SignedIn>
-        <UserButton />
-      </SignedIn>
+        <SignedOut>
+          <Button className="mx-1 bg-green-500">
+            <SignInButton />
+          </Button>
+          <Button className="mx-1 bg-blue-500">
+            <SignUpButton />
+          </Button>
+        </SignedOut>
+        <SignedIn>
+          <UserButton />
+        </SignedIn>
       </div>
     </div>
   );
